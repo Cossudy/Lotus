@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+
+	<class name="nova.master.models.Pnode" table="pnode">
+		<id name="id" column="id" type="long">
+			<generator class="native"></generator>
+		</id>
+		
+		<property name="statusCode"  column="status_code"  type="string"></property>
+		
+		<property name="ip" column="ip" type="string"></property>
+		<property name="port" column="port" type="integer"></property>
+		<property name="pnodeId" column="pnode_id" type="integer"></property>
+				
+		<property name="hostname" column="hostname" type="string"></property>
+		<property name="uuid" column="uuid" type="string"></property>
+		<property name="macAddress" column="mac_address" type="string"></property>
+		<property name="vmCapacity" column="vm_capacity" type="integer"></property>
+
+	</class>
+</hibernate-mapping>
