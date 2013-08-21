@@ -78,10 +78,10 @@ public class LotusWorker extends SimpleServer {
     /**
      * Constructor made private for singleton pattern.
      */
-//    private LotusWorker() {
-//        // TODO @zhaoxun register handlers
-//
-//        // handle http requests
+    private LotusWorker() {
+        // TODO @zhaoxun register handlers
+
+        // handle http requests
 //        this.registerHandler(DefaultHttpRequest.class, new WorkerHttpHandler());
 //
 //        this.registerHandler(StartVnodeMessage.class, new StartVnodeHandler());
@@ -107,10 +107,8 @@ public class LotusWorker extends SimpleServer {
 //
 //        this.registerHandler(ObtainSshKeysMessage.class,
 //                new ObtainSshKeysHandler());
-//
-//        conn = null;
-//
-//    }
+
+    }
 
     public SimpleAddress getAddr() {
         return this.addr;
