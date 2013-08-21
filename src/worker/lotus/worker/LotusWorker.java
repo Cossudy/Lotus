@@ -9,6 +9,7 @@ import lotus.common.service.SimpleDaemon;
 import lotus.common.service.SimpleServer;
 import lotus.common.util.Conf;
 import lotus.master.api.MasterProxy;
+import lotus.worker.daemon.*;
 
 import org.apache.log4j.Logger;
 import org.jboss.netty.channel.Channel;
@@ -29,11 +30,10 @@ public class LotusWorker extends SimpleServer {
     /**
      * All background working daemons for worker node.
      */
-//    SimpleDaemon daemons[] = { new WorkerHeartbeatDaemon(),
-//            new WorkerPerfInfoDaemon(), new VnodeStatusDaemon(),
-//            new VdiskPoolDaemon(), new PnodeStatusDaemon() };
+    SimpleDaemon daemons[] = { new WorkerHeartbeatDaemon(),
+            new StatPMDaemon(), new StatPMDaemon() };
 
-	SimpleDaemon daemons[] = { };
+	//SimpleDaemon daemons[] = { };
     private Object connLock = new Object();
 
     public Object getConnLock() {
