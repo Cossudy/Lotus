@@ -10,6 +10,8 @@ import lotus.common.service.SimpleDaemon;
 import lotus.common.service.SimpleServer;
 import lotus.common.util.Conf;
 
+import lotus.master.handler.*;
+import lotus.master.message.*;
 import lotus.master.models.Pnode;
 import lotus.worker.api.WorkerProxy;
 
@@ -45,17 +47,17 @@ public class LotusMaster extends SimpleServer {
 
         // register handlers
 
-//        this.registerHandler(PnodeHeartbeatMessage.class,
-//                new MasterPnodeHeartbeatHandler());
-//
-//        this.registerHandler(AddPnodeMessage.class,
-//        		new AddPnodeHandler());
-//
-//        this.registerHandler(PnodePerfMessage.class,
-//                new MasterPnodePerfHandler());
-//
-//        this.registerHandler(VnodePerfMessage.class,
-//                new MasterAgentPerfHandler());
+        this.registerHandler(PnodeHeartbeatMessage.class,
+                new PnodeHeartbeatHandler());
+
+        this.registerHandler(AddPnodeMessage.class,
+        		new AddPnodeHandler());
+
+        this.registerHandler(PnodePerfMessage.class,
+                new PnodePerfHandler());
+
+        this.registerHandler(VnodePerfMessage.class,
+                new VnodePerfHandler());
 
         /////////////////////////////////////////////////////
         Conf.setDefaultValue("master.bind_host", "0.0.0.0");
