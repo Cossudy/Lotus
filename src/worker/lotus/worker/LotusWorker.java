@@ -79,7 +79,7 @@ public class LotusWorker extends SimpleServer {
      * Constructor made private for singleton pattern.
      */
 //    private LotusWorker() {
-//        // TODO @shayf register handlers
+//        // TODO @zhaoxun register handlers
 //
 //        // handle http requests
 //        this.registerHandler(DefaultHttpRequest.class, new WorkerHttpHandler());
@@ -147,7 +147,7 @@ public class LotusWorker extends SimpleServer {
         }
         logger.info("All deamons stopped");
         super.shutdown();
-        // TODO @shayf more cleanup work
+        // TODO @zhaoxun more cleanup work
 
         LotusWorker.instance = null;
     }

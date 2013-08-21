@@ -71,7 +71,7 @@ public class SimpleServer extends SimpleChannelHandler {
 
                 ChannelPipeline pipeline = Channels.pipeline();
 
-                // TODO @santa auto determine if need port unification
+                
                 boolean usePortUnification = true;
                 if (usePortUnification) {
                     pipeline.addLast("portUnification",
