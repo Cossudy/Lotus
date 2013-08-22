@@ -21,7 +21,7 @@ import org.jboss.netty.channel.ChannelHandlerContext;
 import org.jboss.netty.channel.ExceptionEvent;
 
 /**
- * Master node of Nova system.
+ * Master node of Lotus system.
  * 
  * @author zhaoxun87@gmail.com
  * 
@@ -74,7 +74,7 @@ public class LotusMaster extends SimpleServer {
      * @return
      */
     public Channel start() {
-        logger.info("Nova master running @ " + this.addr);
+        logger.info("Lotus master running @ " + this.addr);
         Channel chnl = super.bind(this.addr.getInetSocketAddress());
         // start all daemons
         for (SimpleDaemon daemon : this.daemons) {
@@ -90,7 +90,7 @@ public class LotusMaster extends SimpleServer {
      */
     @Override
     public void shutdown() {
-        logger.info("Shutting down NovaMaster");
+        logger.info("Shutting down LotusMaster");
         // stop all daemons
         for (SimpleDaemon daemon : this.daemons) {
             daemon.stopWork();
@@ -144,14 +144,14 @@ public class LotusMaster extends SimpleServer {
     static Logger logger = Logger.getLogger(LotusMaster.class);
 
     /**
-     * Singleton instance of NovaMaster.
+     * Singleton instance of LotusMaster.
      */
     private static LotusMaster instance = null;
 
     /**
-     * Get the singleton of NovaMaster.
+     * Get the singleton of LotusMaster.
      * 
-     * @return NovaMaster instance, singleton.
+     * @return LotusMaster instance, singleton.
      */
     public static synchronized LotusMaster getInstance() {
         if (LotusMaster.instance == null) {
@@ -161,7 +161,7 @@ public class LotusMaster extends SimpleServer {
     }
 
     /**
-     * Application entry of NovaMaster.
+     * Application entry of LotusMaster.
      * 
      * @param args
      *            Environment variables.

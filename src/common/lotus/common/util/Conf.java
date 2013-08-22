@@ -22,9 +22,9 @@ public class Conf extends Properties {
     static Logger logger = Logger.getLogger(Utils.class);
 
     private Conf() {
-        File confDir = new File(Utils.pathJoin(Utils.NOVA_HOME, "conf"));
+        File confDir = new File(Utils.pathJoin(Utils.LOTUS_HOME, "conf"));
         for (File f : confDir.listFiles()) {
-            if (f.isFile() && f.getName().startsWith("nova.")
+            if (f.isFile() && f.getName().startsWith("lotus.")
                     && f.getName().endsWith(".properties")) {
                 logger.info("Loading config from " + f.getAbsolutePath());
                 Properties subConf = new Properties();

@@ -32,18 +32,18 @@ public class Utils {
     static Logger logger = Logger.getLogger(Utils.class);
 
     /**
-     * The home for nova.
+     * The home for lotus.
      */
-    public static final String NOVA_HOME;
+    public static final String LOTUS_HOME;
 
     public static HashMap<String, String> WORKER_VNC_MAP = new HashMap<String, String>();
     public static HashMap<String, String> MASTER_VNC_MAP = new HashMap<String, String>();
 
     /*
-     * Static constructor to determine NOVA_HOME.
+     * Static constructor to determine LOTUS_HOME.
      */
     static {
-        final String confName = Utils.pathJoin("conf", "nova.properties");
+        final String confName = Utils.pathJoin("conf", "lotus.properties");
         File cwd = new File(".");
         String folderPath = null;
         try {
@@ -71,9 +71,9 @@ public class Utils {
             }
         }
 
-        NOVA_HOME = folderPath;
-        if (NOVA_HOME == null) {
-            System.err.println("Failed to locate conf/nova.properties!");
+        LOTUS_HOME = folderPath;
+        if (LOTUS_HOME == null) {
+            System.err.println("Failed to locate conf/lotus.properties!");
             System.err
                     .println("Create the config files according to examples!");
             System.exit(1);
